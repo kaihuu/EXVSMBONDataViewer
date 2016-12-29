@@ -12,6 +12,7 @@ using Livet.EventListeners;
 using Livet.Messaging.Windows;
 
 using EXVSMBONDataViewer.Models;
+using System.Threading.Tasks;
 
 namespace EXVSMBONDataViewer.ViewModels
 {
@@ -59,7 +60,7 @@ namespace EXVSMBONDataViewer.ViewModels
          * 自動的にUIDispatcher上での通知に変換されます。変更通知に際してUIDispatcherを操作する必要はありません。
          */
         #region Clock変更通知プロパティ
-        private string _Clock;
+        private string _Clock = "hello, world!";
 
         public string Clock
         {
@@ -81,6 +82,16 @@ namespace EXVSMBONDataViewer.ViewModels
 
         public void Initialize()
         {
+            Loop();
+        }
+
+        async Task Loop()
+        {
+            while (true)
+            {
+                Clock = DateTime.Now.ToString();
+                await Task.Delay(1000);
+            }
         }
     }
 }
