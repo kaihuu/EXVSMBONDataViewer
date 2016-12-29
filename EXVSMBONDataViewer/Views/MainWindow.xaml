@@ -33,6 +33,7 @@
     </i:Interaction.Triggers>
     
     <Grid>
-        
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="203,150,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
